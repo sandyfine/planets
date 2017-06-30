@@ -14,19 +14,7 @@ Set ws = objWorkbook.Worksheets(1)
 	
 	>
 </HEAD>
- 
-<SCRIPT language="vbscript">
- Option Explicit
- Dim objExcel, objWorkbook, ws 
-Dim last, str1, str2, str3 
-
-Sub RunThisSubroutine
-	str1 = TextBox1.Value
-	str2 = TextBox2.Value
-	d(xlUp).Row
-	  .Range("A" & last+1).value = str1
-	  .Range("B" & last+1).value = str2
-	  .Range("C" & last+1).value = str3
+ 	  .Range("C" & last+1).value = str3
 	 
 End With
 With ws
@@ -71,6 +59,18 @@ replace = "C:\Users\shlee\Desktop\AIM\YNOS\"&TextBox2.Value&".jpg"
 <input id=backbutton class= "button" type="button" value="‘S‚ÄÁ‚·" name="button2" onClick="Emptycells">
 
 </BODY>
+<SCRIPT language="vbscript">
+ Option Explicit
+ Dim objExcel, objWorkbook, ws 
+Dim last, str1, str2, str3 
+
+Sub RunThisSubroutine
+	str1 = TextBox1.Value
+	str2 = TextBox2.Value
+	d(xlUp).Row
+	  .Range("A" & last+1).value = str1
+	  .Range("B" & last+1).value = str2
+
 
         
     

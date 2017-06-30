@@ -14,7 +14,13 @@ Dim last, str1, str2, str3
 Sub RunThisSubroutine
 	str1 = TextBox1.Value
 	str2 = TextBox2.Value
-	str3 = TextBox3.Value
+	d(xlUp).Row
+	  .Range("A" & last+1).value = str1
+	  .Range("B" & last+1).value = str2
+	  .Range("C" & last+1).value = str3
+	 
+End With
+str3 = TextBox3.Value
 	Const xlUp = -4162
 Set objExcel = CreateObject("Excel.Application")
 objExcel.Visible = True
@@ -24,13 +30,7 @@ Set objWorkbook = objExcel.Workbooks.Open("C:\Users\shlee\Desktop\Book1.xlsx")
 Set ws = objWorkbook.Worksheets(1)
 
 With ws
-      last = .Range("A" & .Rows.Count).End(xlUp).Row
-	  .Range("A" & last+1).value = str1
-	  .Range("B" & last+1).value = str2
-	  .Range("C" & last+1).value = str3
-	 
-End With
-
+      last = .Range("A" & .Rows.Count).En
 dim image, objFSO, replace
 Set objFSO = CreateObject("Scripting.FileSystemObject")
 image = document.getElementById("photo").value

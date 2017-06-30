@@ -1,0 +1,92 @@
+<HEAD>
+<TITLE>é–àıìoò^âÊñ </TITLE>
+<hta:application
+	applicationname="HTA Sample"
+	scroll="yes"
+	singleinstance'"yes"
+	>
+</HEAD>
+ 
+<SCRIPT language="vbscript">
+ Option Explicit
+ Dim objExcel, objWorkbook, ws 
+Dim last, str1, str2, str3 
+
+Sub RunThisSubroutine
+	str1 = TextBox1.Value
+	str2 = TextBox2.Value
+	str3 = TextBox3.Value
+	Const xlUp = -4162
+Set objExcel = CreateObject("Excel.Application")
+objExcel.Visible = True
+
+Set objWorkbook = objExcel.Workbooks.Open("C:\Users\shlee\Desktop\Book1.xlsx")
+
+Set ws = objWorkbook.Worksheets(1)
+
+With ws
+      last = .Range("A" & .Rows.Count).End(xlUp).Row
+	  .Range("A" & last+1).value = str1
+	  .Range("B" & last+1).value = str2
+	  .Range("C" & last+1).value = str3
+	 
+End With
+
+dim image, objFSO, replace
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+image = document.getElementById("photo").value
+replace = "C:\Users\shlee\Desktop\AIM\YNOS\"&TextBox2.Value&".jpg"
+msgBox image
+objFSO.CopyFile image, replace
+End Sub
+
+
+
+Sub Emptycells
+	TextBox1.Value = ""
+	TextBox2.Value = ""
+	TextBox3.Value = ""
+	msgBox "erased"
+End Sub
+
+
+ 
+</SCRIPT>
+<BODY STYLE="FONT:10 pt verdana; COLOR:black; filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FFCC66', EndColorStr='#FFFFFF')">
+
+<TD><B>é–àıìoò^âÊñ </B></TD> 
+<BR>
+<table border=0 width=10% height=10%>
+<tr>
+<td align=center valign=middle>
+<img src="<?vbscript replace ?>" width = "88" height = "100"/>
+
+</td>
+</tr>
+</table>
+<input type="file" name="pic"  id="photo" accept="image/*" >
+
+<BR>
+<table>
+<TR>
+<TD>é–àıIDÅF</TD>
+<td><input type="text" name="TextBox1" size="30"></td>
+</tr>
+<tr>
+<td>éÅñºÅF</td>
+<td><input type="text" name="TextBox2" size="30"></td>
+</tr>
+<tr>
+<td>ågë—î‘çÜÅF</td>
+<td><input type="text" name="TextBox3" size="30" value="ÉnÉCÉtÉìÇ»ÇµÇ≈ì¸óÕ"></td>
+</tr>
+</table>
+<BR>
+ 
+<input id=runbutton class= "button" type="button" value="èëÇ´çûÇ›" name="button1" onClick="RunThisSubroutine">
+<input id=backbutton class= "button" type="button" value="ëSÇƒè¡Ç∑" name="button2" onClick="Emptycells">
+
+</BODY>
+
+        
+    

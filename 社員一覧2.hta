@@ -1,0 +1,101 @@
+<html>
+<HEAD>
+<TITLE>ŽÐˆõˆê——</TITLE>
+<hta:application
+	applicationname="HTA Sample"
+	scroll="yes"
+	singleinstance'"yes"
+	>
+</HEAD>
+<head>
+<script type="text/vbscript">
+option explicit
+dim xls
+
+Set xls= createobject("Excel.Application")
+
+Dim book
+Set book = xls.Workbooks.Open("C:\Users\shlee\Desktop\Book1.xlsx")
+
+Dim sheet, last
+Set sheet = book.worksheets("Sheet1")
+last = sheet.usedrange.rows.count
+Dim arr(100,100)
+Dim i
+For i = 1 to last
+arr(i,0) = sheet.cells(i,"A")
+arr(i,1) = sheet.cells(i,"B")
+arr(i,2) = sheet.cells(i,"C")
+Next
+book.close
+xls.quit
+
+
+
+
+
+
+</script>
+
+</head>
+<body>
+
+
+
+<BODY STYLE="FONT:10 pt verdana; COLOR:black; filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FFCC66', EndColorStr='#FFFFFF')">
+
+<TD><B>ŽÐˆõˆê——</B></TD> 
+<BR>
+<table width = "400" border = "1" cellspacing = "1" 
+                     cellpadding = "2" >
+					
+
+<tr>
+<td><input type="text" name="TextBox1" size="30"></td>
+<td><input id=runbutton type="button" value = "search" name="button1" onClick="run"></td>
+</tr>
+
+
+<script type="text/vbscript">
+
+
+Sub run
+document.write("<tr>")
+document.write("<th>" & arr(1,0) & "<th />")
+
+document.write("<th>" & arr(1,1) & "<th />")
+
+document.write("<th>" & arr(1,2) & "<th />")
+document.write("</tr>")
+
+Dim txt, TextBox1
+txt = TextBox1.Value
+msgbox txt
+
+dim i
+for i=2 to last
+if arr(i,0)= txt then
+document.write("<tr>")
+document.write("<td>" & arr(i,0) & "<td />")
+
+document.write("<td>" & arr(i,1) & "<td />")
+
+document.write("<td >" & arr(i,2) & "<td />")
+document.write("</tr>")
+End if
+Next
+
+End sub
+
+
+
+</script>  
+
+
+</table>
+
+
+
+</body>
+</html>
+

@@ -35,42 +35,4 @@ replace = "C:\Users\shlee\Desktop\AIM\YNOS\"&TextBox2.Value&".jpg"
 
 </td>
 </tr>
-</table>
-<input type="file" name="pic"  id="photo" accept="image/*" >
-
-<BR>
-<table>
-<TR>
-<TD>社員ID：</TD>
-<td><input type="text" name="TextBox1" size="30"></td>
-</tr>
-<tr>
-<td>氏名：</td>
-<td><input type="text" name="TextBox2" size="30"></td>
-</tr>
-<tr>
-<td>携帯番号：</td>
-<td><input type="text" name="TextBox3" size="30" value="ハイフンなしで入力"></td>
-</tr>
-</table>
-<BR>
- 
-<input id=runbutton class= "button" type="button" value="書き込み" name="button1" onClick="RunThisSubroutine">
-<input id=backbutton class= "button" type="button" value="全て消す" name="button2" onClick="Emptycells">
-
-</BODY>
-<SCRIPT language="vbscript">
- Option Explicit
- Dim objExcel, objWorkbook, ws 
-Dim last, str1, str2, str3 
-
-Sub RunThisSubroutine
-	str1 = TextBox1.Value
-	str2 = TextBox2.Value
-	d(xlUp).Row
-	  .Range("A" & last+1).value = str1
-	  .Range("B" & last+1).value = str2
-
-
-        
-    
+</tabl
